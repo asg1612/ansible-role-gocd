@@ -1,0 +1,26 @@
+version: "2.2"
+
+networks:
+  default:
+    driver: bridge
+  traefik_default:
+    external: true
+
+services:
+  gocd-server:
+    container_name: gocd-server
+    image: gocd/gocd-server:v18.1.0
+    ports:
+      - 8153
+      - 8154
+    restart: always
+    labels:
+      #- "traefik.agent.port=8153"
+      #- "traefik.agent.frontend.rule=Host:molecule-gocd-server"
+      - "traefik.gocd.port=8153"
+      - "traefik.gocd.frontend.rule=Host:front-goserver-andres.hsap.sacyl.es"
+
+    networks:
+      - traefik_default
+    {# volumes:
+      - /var/local/data/godata:/godata #}

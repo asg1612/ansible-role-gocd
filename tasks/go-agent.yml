@@ -1,0 +1,64 @@
+---
+- name: add gocd repository
+  copy:
+    src: gocd.list
+    dest: /etc/apt/sources.list.d/gocd.list
+  become: true
+
+- name: add repository key
+  get_url:
+    url: https://download.gocd.io/GOCD-GPG-KEY.asc
+    dest: "/tmp/GOCD-GPG-KEY.asc"
+  become: true
+
+- name: add key
+  command: apt-key add /tmp/GOCD-GPG-KEY.asc
+  become: true
+
+- name: update apt packages
+  apt: update_cache=yes
+  become: true
+
+- name: Install go-agent
+  apt:
+    name: "{{ item }}"
+    state: present
+  become: true
+  with_items:
+    - locales
+    - go-agent
+
+- name: add user go
+  user:
+    name: go
+    state: present
+
+- name: Upload go config
+  copy:
+    src: go-agent
+    dest: /etc/default/go-agent
+    owner: go
+  notify: restart go-agent
+  become: true
+
+- name: Upload cert
+  copy:
+    src: agent.jks
+    dest: /var/lib/go-agent/conf/
+    owner: go
+  notify: restart go-agent
+  become: true
+
+- name: Upload trust cert
+  copy:
+    src: trust.jks
+    dest: /var/lib/go-agent/conf/
+    owner: go
+  notify: restart go-agent
+  become: true
+
+- name: Add go user to docker group
+  user:
+    name: go
+    group: docker
+  become: true

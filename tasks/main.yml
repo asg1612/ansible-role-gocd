@@ -1,0 +1,8 @@
+---
+# tasks file for ansible-role-gocd
+
+- include_tasks: go-server.yml
+  when: "'gocd-server' in group_names"
+
+- include_tasks: go-agent.yml
+  when: "'gocd-agents' in group_names"
