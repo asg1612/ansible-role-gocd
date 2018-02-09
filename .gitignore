@@ -2,3 +2,4 @@
 .idea/
 .molecule/
 *.pyc
+.pytest_cache/
