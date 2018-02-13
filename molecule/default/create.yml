@@ -46,7 +46,6 @@
         capabilities: "{{ item.capabilities | default(omit) }}"
         ports: "{{ item.exposed_ports | default(omit) }}"
         ulimits: "{{ item.ulimits | default(omit) }}"
-        dns_servers: "{{ item.dns_servers | default(omit) }}"
         links: "{{ item.links | default(omit) }}"
       register: server
       with_items: "{{ molecule_yml.platforms }}"

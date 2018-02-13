@@ -18,8 +18,6 @@ platforms:
     command: /lib/systemd/systemd
     groups:
       - gocd-server
-    dns_servers:
-      - 10.36.11.238
   - name: molecule-gocd-agent
     image: solita/ubuntu-systemd
     privileged: 'True'
@@ -29,8 +27,6 @@ platforms:
     command: /lib/systemd/systemd
     groups:
       - gocd-agents
-    dns_servers:
-      - 10.36.11.238
     links:
       - molecule-gocd-server:gocd-server
 provisioner:
