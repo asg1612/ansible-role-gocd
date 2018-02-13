@@ -1,5 +1,8 @@
 ---
 # handlers file for ansible-role-gocd
 - name: restart go-agent
-  command: systemctl restart go-agent
+  systemd:
+      state: restarted
+      daemon_reload: true
+      name: go-agent
   become: true

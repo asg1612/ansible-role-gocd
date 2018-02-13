@@ -13,6 +13,7 @@ def test_hosts_file(host):
     assert f.user == 'root'
     assert f.group == 'root'
 
+
 def test_agent_service(host):
         service = host.service("go-agent")
         assert(service.is_running)

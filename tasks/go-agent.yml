@@ -12,7 +12,9 @@
   become: true
 
 - name: add key
-  command: apt-key add /tmp/GOCD-GPG-KEY.asc
+  apt_key:
+    file: /tmp/GOCD-GPG-KEY.asc
+    state: present
   become: true
 
 - name: update apt packages
