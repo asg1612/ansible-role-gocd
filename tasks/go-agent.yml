@@ -18,7 +18,9 @@
   become: true
 
 - name: update apt packages
-  apt: update_cache=yes
+  apt:
+    update_cache: yes
+    cache_valid_time: 36000
   become: true
 
 - name: Install go-agent
