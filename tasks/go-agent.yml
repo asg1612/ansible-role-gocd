@@ -17,15 +17,10 @@
     state: present
   become: true
 
-- name: update apt packages
-  apt:
-    update_cache: yes
-    cache_valid_time: 36000
-  become: true
-
 - name: Install go-agent
   apt:
     name: "{{ item }}"
+    update_cache: 'yes'
     state: present
   become: true
   with_items:

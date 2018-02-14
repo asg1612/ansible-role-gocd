@@ -1,3 +1,5 @@
+![Status](https://travis-ci.org/asg1612/ansible-role-gocd.svg?branch=master)
+
 Role Name
 =========
 
