@@ -1,18 +1,21 @@
 ---
-- name: Create Directory
-  file:
-    path: "{{ item }}"
-    state: directory
-  with_items:
-    - /var/local/data/godata
-    - /var/local/goserver/prod/
-
-- name: Upload docker compose
-  template:
-    src: docker-compose-goserver.yml.j2
-    dest: /var/local/goserver/prod/docker-compose.yml
-
-- name: Run docker compose
-  docker_service:
-    project_src: /var/local/goserver/prod/
+- name: Install go-server
+  apt:
+    name: "{{ item }}"
+    update_cache: 'yes'
     state: present
+  become: true
+  with_items:
+    - go-server
+
+- name: Enable service go-server
+  systemd:
+      enabled: yes
+      name: go-server
+  become: true
+
+- name: Start service go-server
+  systemd:
+    state: started
+    name: go-server
+  become: true

@@ -1,4 +1,3 @@
 ---
 - src: asg1612.docker
-- src: asg1612.traefik
 - src: asg1612.oracle-java

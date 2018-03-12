@@ -11,8 +11,8 @@ platforms:
     privileged: 'True'
     required: 'True'
     exposed_ports:
-      - "80:80"
-      - "8088:8080"
+      - "8153:8153"
+      - "8154:8154"
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     command: /lib/systemd/systemd

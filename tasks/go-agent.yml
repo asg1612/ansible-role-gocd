@@ -1,22 +1,4 @@
 ---
-- name: add gocd repository
-  copy:
-    src: gocd.list
-    dest: /etc/apt/sources.list.d/gocd.list
-  become: true
-
-- name: add repository key
-  get_url:
-    url: https://download.gocd.io/GOCD-GPG-KEY.asc
-    dest: "/tmp/GOCD-GPG-KEY.asc"
-  become: true
-
-- name: add key
-  apt_key:
-    file: /tmp/GOCD-GPG-KEY.asc
-    state: present
-  become: true
-
 - name: Install go-agent
   apt:
     name: "{{ item }}"

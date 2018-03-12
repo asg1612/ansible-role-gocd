@@ -3,6 +3,5 @@
   hosts: all
   roles:
     - role: asg1612.docker
-    - role: asg1612.traefik
     - role: asg1612.oracle-java
     - role: ansible-role-gocd
