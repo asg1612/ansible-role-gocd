@@ -10,8 +10,8 @@
 
 - name: Enable service go-server
   systemd:
-      enabled: yes
-      name: go-server
+    enabled: yes
+    name: go-server
   become: true
 
 - name: Start service go-server

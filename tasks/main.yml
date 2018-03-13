@@ -17,7 +17,7 @@
     file: /tmp/GOCD-GPG-KEY.asc
     state: present
   become: true
-  
+
 - include_tasks: go-server.yml
   when: "'gocd-server' in group_names"
 
