@@ -15,7 +15,7 @@
     state: present
 
 - name: Upload go config
-  copy:
+  template:
     src: go-agent
     dest: /etc/default/go-agent
     owner: go
