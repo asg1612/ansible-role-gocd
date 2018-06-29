@@ -8,6 +8,7 @@
   with_items:
     - locales
     - go-agent
+    - yarn
 
 - name: add user go
   user:
