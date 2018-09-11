@@ -8,7 +8,7 @@ lint:
 platforms:
   - name: molecule-gocd-server
     image: solita/ubuntu-systemd
-    privileged: True
+    privileged: true
     required: 'True'
     exposed_ports:
       - "8153:8153"
@@ -20,7 +20,7 @@ platforms:
       - gocd-server
   - name: molecule-gocd-agent
     image: solita/ubuntu-systemd
-    privileged: True
+    privileged: true
     required: 'True'
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"

@@ -3,6 +3,7 @@
   hosts: all
   vars:
     - GOCD_SERVER: "https://molecule-gocd-server:8154/go"
+    - docker_version: 18.06.*
   roles:
     - role: asg1612.docker
     - role: asg1612.oracle-java

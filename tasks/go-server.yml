@@ -10,7 +10,7 @@
 
 - name: Enable service go-server
   systemd:
-    enabled: yes
+    enabled: true
     name: go-server
   become: true
 
