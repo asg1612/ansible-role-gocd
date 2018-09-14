@@ -20,6 +20,8 @@
     src: go-agent
     dest: /etc/default/go-agent
     owner: root
+    group: root
+    mode: 0644
   notify: restart go-agent
   become: true
 
