@@ -19,7 +19,7 @@
   template:
     src: go-agent
     dest: /etc/default/go-agent
-    owner: go
+    owner: root
   notify: restart go-agent
   become: true
 
