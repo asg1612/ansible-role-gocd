@@ -6,7 +6,7 @@
     state: present
   become: true
   with_items:
-    - go-server=18.9.0*
+    - go-server=19.2.0*
 
 - name: Enable service go-server
   systemd:
