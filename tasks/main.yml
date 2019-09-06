@@ -18,6 +18,12 @@
     state: present
   become: true
 
+- name: Install openjdk
+  apt:
+    name: openjdk-11-jre
+    state: present
+    update_cache: true
+
 - include_tasks: go-server.yml
   when: "'gocd-server' in group_names"
 
