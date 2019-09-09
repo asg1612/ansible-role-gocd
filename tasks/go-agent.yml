@@ -12,7 +12,7 @@
     - python-pip
 - name: Install Python packages
   pip:
-    name: ansible
+    name: ["ansible", "minio"]
     state: present
 
 - name: add user go
