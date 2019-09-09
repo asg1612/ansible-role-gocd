@@ -9,19 +9,29 @@
     - locales
     - go-agent
     - nodejs
+    - python-pip
+- name: Install Python packages
+  pip:
+    name: ansible
+    state: present
 
 - name: add user go
   user:
     name: go
     state: present
 
+- name: Change owner directories
+  file:
+    path: ["/usr/share/go-agent/", "/var/log/go-agent/"]
+    owner: go
+    group: go
+    recurse: yes
+
+
 - name: Upload go config
   template:
-    src: go-agent
-    dest: /etc/default/go-agent
-    owner: root
-    group: root
-    mode: 0644
+    src: wrapper-properties.conf.j2
+    dest: /usr/share/go-agent/wrapper-config/wrapper-properties.conf
   notify: restart go-agent
   become: true
 
