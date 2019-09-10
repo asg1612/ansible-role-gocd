@@ -6,5 +6,4 @@
     - docker_version: 18.06.*
   roles:
     - role: asg1612.docker
-    - role: asg1612.oracle-java
     - role: ansible-role-gocd
