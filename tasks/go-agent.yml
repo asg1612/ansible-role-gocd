@@ -10,6 +10,8 @@
     - go-agent
     - nodejs
     - python-pip
+    - sshpass
+    
 - name: Install Python packages
   pip:
     name: ["ansible", "minio", "molecule"]
