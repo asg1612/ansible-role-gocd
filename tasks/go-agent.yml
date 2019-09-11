@@ -11,7 +11,9 @@
     - nodejs
     - python-pip
     - sshpass
-    
+    - golang
+    - go-dep
+
 - name: Install Python packages
   pip:
     name: ["ansible", "minio", "molecule"]
