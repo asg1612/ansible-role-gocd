@@ -7,7 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: molecule-gocd-server
-    image: solita/ubuntu-systemd
+    image: asg1612/docker-systemd
     privileged: true
     required: 'True'
     exposed_ports:
@@ -19,7 +19,7 @@ platforms:
     groups:
       - gocd-server
   - name: molecule-gocd-agent
-    image: solita/ubuntu-systemd
+    image: asg1612/docker-systemd
     privileged: true
     required: 'True'
     volumes:
