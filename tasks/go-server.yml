@@ -5,8 +5,7 @@
     update_cache: 'yes'
     state: present
   become: true
-  with_items:
-    - go-server=19.3.0*
+ 
 
 - name: Enable service go-server
   systemd:

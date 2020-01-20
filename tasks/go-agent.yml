@@ -24,6 +24,13 @@
     name: go
     state: present
 
+- name: Upload go config
+  template:
+    src: wrapper-properties.conf.j2
+    dest: /usr/share/go-agent/wrapper-config/wrapper-properties.conf
+  notify: restart go-agent
+  become: true
+
 - name: Change owner directories
   file:
     path: ["/usr/share/go-agent/", "/var/log/go-agent/"]
@@ -31,13 +38,6 @@
     group: go
     recurse: yes
 
-
-- name: Upload go config
-  template:
-    src: wrapper-properties.conf.j2
-    dest: /usr/share/go-agent/wrapper-config/wrapper-properties.conf
-  notify: restart go-agent
-  become: true
 
 - name: Upload cert
   copy:
