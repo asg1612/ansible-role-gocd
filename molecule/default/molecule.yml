@@ -4,7 +4,7 @@ dependency:
 driver:
   name: docker
 lint:
-  name: yamllint
+  name: "yamllint"
 platforms:
   - name: "molecule-gocd-server"
     image: "asg1612/docker-systemd"
@@ -16,8 +16,8 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     command: /lib/systemd/systemd
-    groups:
-      - gocd-server
+  #  groups:
+  #    - gocd-server
   #- name: molecule-gocd-agent
   #  image: asg1612/docker-systemd
   #  privileged: true
