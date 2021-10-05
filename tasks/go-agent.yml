@@ -39,7 +39,7 @@
     path: ["/usr/share/go-agent/", "/var/log/go-agent/"]
     owner: go
     group: go
-    recurse: yes
+    recurse: true
 
 
 - name: Upload cert
@@ -47,6 +47,7 @@
     src: agent.jks
     dest: /var/lib/go-agent/conf/
     owner: go
+    mode: '0600'
   notify: restart go-agent
   become: true
 
@@ -55,6 +56,7 @@
     src: trust.jks
     dest: /var/lib/go-agent/conf/
     owner: go
+    mode: '0600'
   notify: restart go-agent
   become: true
 
