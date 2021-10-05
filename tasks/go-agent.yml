@@ -25,7 +25,7 @@
     state: present
 
 - name: Upload go config
- ansible.builtin.template:
+  ansible.builtin.template:
     src: wrapper-properties.conf.j2
     dest: /usr/share/go-agent/wrapper-config/wrapper-properties.conf
     owner: root
