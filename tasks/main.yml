@@ -4,6 +4,7 @@
   copy:
     src: gocd.list
     dest: /etc/apt/sources.list.d/gocd.list
+    mode: '0600'
   become: true
 
 - name: add repository key
