@@ -15,6 +15,6 @@ def test_hosts_file(host):
 
 
 def test_agent_service(host):
-        service = host.service("go-agent")
-        assert(service.is_running)
-        assert(service.is_enabled)
+    service = host.service("go-agent")
+    assert(service.is_running)
+    assert(service.is_enabled)
