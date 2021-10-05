@@ -3,8 +3,7 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint:
-  name: "yamllint"
+lint: yamllint
 platforms:
   - name: "molecule-gocd-server"
     image: "asg1612/docker-systemd"
