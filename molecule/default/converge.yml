@@ -1,0 +1,13 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    - GOCD_SERVER: "https://molecule-gocd-server:8154/go"
+    - docker_version: 18.06.*
+  roles:
+    - role: asg1612.docker
+    - role: ansible-role-gocd
+  tasks:
+    - name: "Include my-new-role"
+      include_role:
+        name: "my-new-role"
