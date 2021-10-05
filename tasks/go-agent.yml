@@ -25,9 +25,12 @@
     state: present
 
 - name: Upload go config
-  template:
+ ansible.builtin.template:
     src: wrapper-properties.conf.j2
     dest: /usr/share/go-agent/wrapper-config/wrapper-properties.conf
+    owner: root
+    group: go
+    mode: '0640'
   notify: restart go-agent
   become: true
 
