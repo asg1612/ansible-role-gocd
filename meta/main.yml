@@ -1,5 +1,7 @@
 ---
 galaxy_info:
+  role_name: gocd
+  namespace: asg1612
   author: Andrés Sánchez García
   description: gocd-server server and gocd-agent
   company: HSAP
