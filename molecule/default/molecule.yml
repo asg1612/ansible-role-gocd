@@ -6,8 +6,8 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: molecule-gocd-server
-    image: asg1612/docker-systemd
+  - name: "molecule-gocd-server"
+    image: "asg1612/docker-systemd"
     privileged: true
     required: 'True'
     exposed_ports:
@@ -18,17 +18,17 @@ platforms:
     command: /lib/systemd/systemd
     groups:
       - gocd-server
-  - name: molecule-gocd-agent
-    image: asg1612/docker-systemd
-    privileged: true
-    required: 'True'
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    command: /lib/systemd/systemd
-    groups:
-      - gocd-agents
-    links:
-      - molecule-gocd-server:gocd-server
+  #- name: molecule-gocd-agent
+  #  image: asg1612/docker-systemd
+  #  privileged: true
+  #  required: 'True'
+  #  volumes:
+  #    - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+  #  command: /lib/systemd/systemd
+  #  groups:
+  #    - gocd-agents
+  #  links:
+  #    - molecule-gocd-server:gocd-server
 provisioner:
   name: ansible
   lint:
