@@ -3,7 +3,7 @@ dependency:
   name: galaxy
 driver:
   name: docker
-lint: |   
+lint: |
         yamllint .
         ansible-lint
         flake8
@@ -18,19 +18,19 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     command: /lib/systemd/systemd
-  #  groups:
-  #    - gocd-server
-  #- name: molecule-gocd-agent
-  #  image: asg1612/docker-systemd
-  #  privileged: true
-  #  required: 'True'
-  #  volumes:
-  #    - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  #  command: /lib/systemd/systemd
-  #  groups:
-  #    - gocd-agents
-  #  links:
-  #    - molecule-gocd-server:gocd-server
+    #  groups:
+    #    - gocd-server
+    # - name: molecule-gocd-agent
+    #  image: asg1612/docker-systemd
+    #  privileged: true
+    #  required: 'True'
+    #  volumes:
+    #    - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    #  command: /lib/systemd/systemd
+    #  groups:
+    #    - gocd-agents
+    #  links:
+    #    - molecule-gocd-server:gocd-server
 provisioner:
   name: ansible
   lint:
