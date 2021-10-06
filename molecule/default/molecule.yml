@@ -8,8 +8,8 @@ lint: |
         ansible-lint
         flake8
 platforms:
-  - name: "molecule-gocd-server"
-    image: "asg1612/docker-systemd"
+  - name: molecule-gocd-server
+    image: asg1612/docker-systemd
     privileged: true
     required: 'True'
     exposed_ports:
@@ -19,7 +19,7 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     command: /lib/systemd/systemd
     groups:
-      - gocd-server
+      - gocd_server
   - name: molecule-gocd-agent
     image: asg1612/docker-systemd
     privileged: true
@@ -28,9 +28,9 @@ platforms:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     command: /lib/systemd/systemd
     groups:
-      - gocd-agents
+      - gocd_agents
     links:
-      - molecule-gocd-server:gocd-server
+      - molecule-gocd-server:gocd_server
 provisioner:
   name: ansible
   lint:

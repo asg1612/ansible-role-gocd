@@ -4,6 +4,13 @@
 
   tasks:
     - name: dependency for apt_key
-      pip:
-        name: gpg
-      delegate_to: 127.0.0.1
+      apt:
+        name: python3-gpg
+        state: present
+        update_cache: true
+
+    - name: dependency for pip
+      apt:
+        name: python3-pip
+        state: present
+        update_cache: true
