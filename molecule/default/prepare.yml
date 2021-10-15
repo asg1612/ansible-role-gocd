@@ -1,0 +1,16 @@
+---
+- name: Prepare
+  hosts: all
+
+  tasks:
+    - name: dependency for apt_key
+      apt:
+        name: python3-gpg
+        state: present
+        update_cache: true
+
+    - name: dependency for pip
+      apt:
+        name: python3-pip
+        state: present
+        update_cache: true
