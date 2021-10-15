@@ -12,9 +12,9 @@ platforms:
     image: docker.io/asg1612/docker-systemd
     privileged: true
     required: 'True'
-    exposed_ports:
-      - "8153:8153"
-      - "8154:8154"
+    # exposed_ports:
+    #   - "8153:8153"
+    #   - "8154:8154"
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
     command: /lib/systemd/systemd

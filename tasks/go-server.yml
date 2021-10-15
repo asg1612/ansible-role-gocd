@@ -1,5 +1,5 @@
 ---
-- name: Install go-server
+- name: Install go_server
   apt:
     name: "{{ item }}"
     update_cache: 'yes'

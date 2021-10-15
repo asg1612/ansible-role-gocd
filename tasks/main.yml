@@ -26,7 +26,7 @@
     update_cache: true
 
 - include_tasks: go-server.yml
-  when: "'gocd-server' in group_names"
+  when: "'gocd_server' in group_names"
 
 - include_tasks: go-agent.yml
-  when: "'gocd-agents' in group_names"
+  when: "'gocd_agents' in group_names"

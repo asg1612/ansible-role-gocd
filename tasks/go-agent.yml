@@ -1,5 +1,5 @@
 ---
-- name: Install go-agent
+- name: Install go_agent
   apt:
     name: "{{ item }}"
     update_cache: 'yes'
