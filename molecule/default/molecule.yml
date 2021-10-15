@@ -9,7 +9,7 @@ lint: |
         flake8
 platforms:
   - name: molecule-gocd-server
-    image: asg1612/docker-systemd
+    image: docker.io/asg1612/docker-systemd
     privileged: true
     required: 'True'
     exposed_ports:
@@ -21,7 +21,7 @@ platforms:
     groups:
       - gocd_server
   - name: molecule-gocd-agent
-    image: asg1612/docker-systemd/asg1612/docker-systemd
+    image: docker.io/asg1612/docker-systemd
     privileged: true
     required: 'True'
     volumes:
