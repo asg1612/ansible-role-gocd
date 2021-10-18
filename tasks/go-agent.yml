@@ -9,7 +9,7 @@
     - locales
     - go-agent
     - nodejs
-    - python-pip
+    # - python-pip
     - sshpass
     - golang
     - go-dep
@@ -60,8 +60,8 @@
   notify: restart go-agent
   become: true
 
-- name: Add go user to docker group
-  user:
-    name: go
-    group: docker
-  become: true
+# - name: Add go user to docker group
+#   user:
+#     name: go
+#     group: docker
+#   become: true
