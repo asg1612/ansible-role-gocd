@@ -7,7 +7,7 @@ authors = ["Andrés Sánchez García <Andrés Sánchez García>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 molecule = {extras = ["podman"], version = "^3.5.2"}
-ansible = "^4.7.0"
+ansible = "^7.0.0"
 ansible-lint = "^5.2.0"
 flake8 = "^4.0.1"
 yamllint = "^1.26.3"
